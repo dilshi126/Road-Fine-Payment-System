@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Road Fines Payment System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Homepage -->
+    <div id="homepage">
+      <h1>Welcome to Road Fines Payment System</h1>
+      <button onclick="showLogin()">Police Officer Login</button>
+      <button onclick="showPayment()">Driver Fine Payment</button>
+      <button onclick="showAdminLogin()">Admin Login</button>
+    </div>
+    
+    <!-- Police Officer Login -->
+    <div id="loginPage" style="display:none;">
+      <h2>Police Officer Login</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <button onclick="showCreateAccount()">Create Account</button>
+    </div>
+
+    <!-- Police Officer Create Account -->
+    <div id="createAccountPage" style="display:none;">
+      <h2>Create Police Officer Account</h2>
+      <form id="createAccountForm">
+        <input type="text" id="officerID" placeholder="ID Number" required>
+        <input type="text" id="policeID" placeholder="Police ID Number" required>
+        <input type="text" id="name" placeholder="Name" required>
+        <button type="submit">Create Account</button>
+      </form>
+    </div>
+
+    <!-- Driver Fine Payment -->
+    <div id="paymentPage" style="display:none;">
+      <h2>Pay Your Fine</h2>
+      <form id="paymentForm">
+        <input type="text" id="licenseNumber" placeholder="Driver's License Number" required>
+        <button type="submit">Find Fine</button>
+      </form>
+      <div id="fineDetails" style="display:none;">
+        <!-- Fine details will be displayed here -->
+        <p id="fineAmount"></p>
+        <button onclick="payFine()">Pay Fine</button>
+      </div>
+    </div>
+
+    <!-- Admin Login -->
+    <div id="adminLoginPage" style="display:none;">
+      <h2>Admin Login</h2>
+      <form id="adminLoginForm">
+        <input type="text" id="adminUsername" placeholder="Username" required>
+        <input type="password" id="adminPassword" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" style="display:none;">
+      <h2>Admin Dashboard</h2>
+      <button onclick="showAddOfficer()">Add Police Officer</button>
+      <div id="officerList">
+        <!-- List of officers will be displayed here -->
+      </div>
+      <div id="addOfficerPage" style="display:none;">
+        <h2>Add Police Officer</h2>
+        <form id="addOfficerForm">
+          <input type="text" id="newOfficerID" placeholder="ID Number" required>
+          <input type="text" id="newPoliceID" placeholder="Police ID Number" required>
+          <input type="text" id="newOfficerName" placeholder="Name" required>
+          <button type="submit">Add Officer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
